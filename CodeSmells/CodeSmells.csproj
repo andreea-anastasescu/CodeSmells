@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{485D8FC6-25D2-448A-B5C6-D0155C50ADF6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CodeSmells</RootNamespace>
+    <AssemblyName>CodeSmells</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bloaters\2.LongClass\MultipleResponsabilities\2.FeatureEnvy\Customer.cs" />
+    <Compile Include="Bloaters\2.LongClass\MultipleResponsabilities\1.GodObject\Employee.cs" />
+    <Compile Include="Bloaters\2.LongClass\MultipleResponsabilities\1.GodObject\ProposedSolution.cs" />
+    <Compile Include="Bloaters\1.LongMethod\1.ExtractMethod\Fakes\Payroll.cs" />
+    <Compile Include="Bloaters\1.LongMethod\1.ExtractMethod\Payroll-After.cs" />
+    <Compile Include="Bloaters\1.LongMethod\1.ExtractMethod\Payroll-Before.cs" />
+    <Compile Include="Bloaters\1.LongMethod\2.IntroducingParameterObject\Customer-After.cs" />
+    <Compile Include="Bloaters\1.LongMethod\2.IntroducingParameterObject\Customer-Before.cs" />
+    <Compile Include="Bloaters\1.LongMethod\3.PreserveWholeObject\Fakes\plan.cs" />
+    <Compile Include="Bloaters\1.LongMethod\3.PreserveWholeObject\Sample.cs" />
+    <Compile Include="Bloaters\1.LongMethod\4.ReplaceMethodWithObject\Order-After.cs" />
+    <Compile Include="Bloaters\1.LongMethod\4.ReplaceMethodWithObject\Order-Before.cs" />
+    <Compile Include="Bloaters\1.LongMethod\5.ReplaceTempWithQuery\DiscountCalculator -After.cs" />
+    <Compile Include="Bloaters\1.LongMethod\5.ReplaceTempWithQuery\DiscountCalculator-Before.cs" />
+    <Compile Include="Bloaters\1.LongMethod\6.DecomposeConditional\GasCostCalculator-After.cs" />
+    <Compile Include="Bloaters\1.LongMethod\6.DecomposeConditional\GasCostCalculator-Before.cs" />
+    <Compile Include="ChangePreventers\2.ShotgunSurgery\BigDal-After.cs" />
+    <Compile Include="ChangePreventers\2.ShotgunSurgery\BigDal-Before.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Bloaters\3.DataClumps\description.md" />
+    <None Include="ChangePreventers\2.ShotgunSurgery\about.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bloaters\4.LongParametersList\" />
+    <Folder Include="Bloaters\5.PrimitiveObsession\" />
+    <Folder Include="ChangePreventers\1.DivergentChange\" />
+    <Folder Include="ChangePreventers\3.ParallelClassHierarchies\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
