@@ -13,6 +13,8 @@
                 double tertiaryBasePrice;
                 // long computation.
                 //...
+                ///
+                ///
 
                 return 0; // :-)
             }

@@ -38,5 +38,5 @@ namespace CodeSmells.Bloaters.LongClass.MultipleResponsabilities.GodObject
                 }
             }
         }
-    }
-}
+ }
+

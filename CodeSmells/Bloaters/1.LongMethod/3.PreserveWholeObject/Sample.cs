@@ -18,9 +18,7 @@ namespace CodeSmells.Bloaters.LongMethod.PreserveWholeObject
             //...
             int thicknessFactor = Plan.GetThermicFactor(GetTemperatureRange());
         }
-
-
-
+               
         private TemperatureRange GetTemperatureRange()
         {
             //reads from stats

@@ -14,6 +14,7 @@ namespace CodeSmells.Bloaters.LongMethod.ExtractMethod
             Console.WriteLine("name: " + payroll.Name);
             Console.WriteLine("gross salary: " + payroll.Gross);
             Console.WriteLine("tax " + payroll.Tax);
+            //...
         }
 
 

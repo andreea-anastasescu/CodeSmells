@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +12,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.TestPlatform.14.0.0.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.TestPlatform.14.0.0.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bloaters\1.LongMethod\4.ReplaceMethodWithObject\BlackFriday\Currency.cs" />
+    <Compile Include="Bloaters\1.LongMethod\4.ReplaceMethodWithObject\BlackFriday\Money.cs" />
+    <Compile Include="Bloaters\1.LongMethod\4.ReplaceMethodWithObject\BlackFriday\PostageCalculator-Step2.cs" />
+    <Compile Include="Bloaters\1.LongMethod\4.ReplaceMethodWithObject\BlackFriday\PostageCalculator-Step1.cs" />
+    <Compile Include="Bloaters\1.LongMethod\4.ReplaceMethodWithObject\BlackFriday\PostageCalculator-Before.cs" />
+    <Compile Include="Bloaters\1.LongMethod\4.ReplaceMethodWithObject\BlackFriday\PostageCalculatorTests.cs" />
     <Compile Include="Bloaters\2.LongClass\MultipleResponsabilities\2.FeatureEnvy\Customer.cs" />
     <Compile Include="Bloaters\2.LongClass\MultipleResponsabilities\1.GodObject\Employee.cs" />
     <Compile Include="Bloaters\2.LongClass\MultipleResponsabilities\1.GodObject\ProposedSolution.cs" />
@@ -58,8 +76,13 @@
     <Compile Include="Bloaters\1.LongMethod\5.ReplaceTempWithQuery\DiscountCalculator-Before.cs" />
     <Compile Include="Bloaters\1.LongMethod\6.DecomposeConditional\GasCostCalculator-After.cs" />
     <Compile Include="Bloaters\1.LongMethod\6.DecomposeConditional\GasCostCalculator-Before.cs" />
-    <Compile Include="ChangePreventers\2.ShotgunSurgery\BigDal-After.cs" />
-    <Compile Include="ChangePreventers\2.ShotgunSurgery\BigDal-Before.cs" />
+    <Compile Include="ChangePreventers\1.DivergentChange\Pub.cs" />
+    <Compile Include="ChangePreventers\1.DivergentChange\PubPricesTests.cs" />
+    <Compile Include="ChangePreventers\1.DivergentChange\Refactored\Beverage.cs" />
+    <Compile Include="ChangePreventers\1.DivergentChange\Refactored\Pub.cs" />
+    <Compile Include="ChangePreventers\2.ShotgunSurgery\Sample-Before.cs" />
+    <Compile Include="ChangePreventers\3.ParallelClassHierarchies\CollapseHierarchies\Employee-Before.cs" />
+    <Compile Include="ChangePreventers\3.ParallelClassHierarchies\CollapseHierarchies\Employee-After.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,12 +90,17 @@
     <None Include="App.config" />
     <None Include="Bloaters\3.DataClumps\description.md" />
     <None Include="ChangePreventers\2.ShotgunSurgery\about.md" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Bloaters\4.LongParametersList\" />
     <Folder Include="Bloaters\5.PrimitiveObsession\" />
-    <Folder Include="ChangePreventers\1.DivergentChange\" />
-    <Folder Include="ChangePreventers\3.ParallelClassHierarchies\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
+  </Target>
 </Project>
