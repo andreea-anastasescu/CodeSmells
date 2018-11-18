@@ -20,19 +20,19 @@ namespace CodeSmells.ChangePreventers._1.DivergentChange
             Assert.AreEqual(74, actualPrice);            
         }
 
-        //[TestMethod]
-        //public void testStudentsGetADiscountForBeer() throws Exception
-        //{
-        //        int actualPrice = pub.computeCost(Pub.ONE_BEER, true, 1);
-        //assertEquals(67, actualPrice);
-        //}
+        [TestMethod]
+        public void TestStudentsGetADiscountForBeer() 
+        {
+            int actualPrice = pub.computeCost(Pub.ONE_BEER, true, 1);
+            Assert.Equals(67, actualPrice);
+        }
 
-    //    @Test
-    //    public void testCidersAreCostly() throws Exception
-    //    {
-    //        int actualPrice = pub.computeCost(Pub.ONE_CIDER, false, 1);
-    //        assertEquals(103, actualPrice);
-    //    }
+        [TestMethod]
+        public void TestCidersAreCostly() 
+        {
+            int actualPrice = pub.computeCost(Pub.ONE_CIDER, false, 1);
+            Assert.Equals(103, actualPrice);
+        }
 
     //    @Test
     //    public void testProperCidersAreEvenMoreExpensive() throws Exception

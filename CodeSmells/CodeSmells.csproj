@@ -79,7 +79,10 @@
     <Compile Include="ChangePreventers\1.DivergentChange\Pub.cs" />
     <Compile Include="ChangePreventers\1.DivergentChange\PubPricesTests.cs" />
     <Compile Include="ChangePreventers\1.DivergentChange\Refactored\Beverage.cs" />
+    <Compile Include="ChangePreventers\1.DivergentChange\Refactored\Cocktail.cs" />
+    <Compile Include="ChangePreventers\1.DivergentChange\Refactored\IngredientUnit.cs" />
     <Compile Include="ChangePreventers\1.DivergentChange\Refactored\Pub.cs" />
+    <Compile Include="ChangePreventers\1.DivergentChange\Refactored\SimpleBeverage.cs" />
     <Compile Include="ChangePreventers\2.ShotgunSurgery\Sample-Before.cs" />
     <Compile Include="ChangePreventers\3.ParallelClassHierarchies\CollapseHierarchies\Employee-Before.cs" />
     <Compile Include="ChangePreventers\3.ParallelClassHierarchies\CollapseHierarchies\Employee-After.cs" />
