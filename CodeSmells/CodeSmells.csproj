@@ -76,6 +76,8 @@
     <Compile Include="Bloaters\1.LongMethod\5.ReplaceTempWithQuery\DiscountCalculator-Before.cs" />
     <Compile Include="Bloaters\1.LongMethod\6.DecomposeConditional\GasCostCalculator-After.cs" />
     <Compile Include="Bloaters\1.LongMethod\6.DecomposeConditional\GasCostCalculator-Before.cs" />
+    <Compile Include="Bloaters\5.PrimitiveObsession\Address-After.cs" />
+    <Compile Include="Bloaters\5.PrimitiveObsession\Address-Before.cs" />
     <Compile Include="ChangePreventers\1.DivergentChange\Pub.cs" />
     <Compile Include="ChangePreventers\1.DivergentChange\PubPricesTests.cs" />
     <Compile Include="ChangePreventers\1.DivergentChange\Refactored\Beverage.cs" />
@@ -97,7 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Bloaters\4.LongParametersList\" />
-    <Folder Include="Bloaters\5.PrimitiveObsession\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

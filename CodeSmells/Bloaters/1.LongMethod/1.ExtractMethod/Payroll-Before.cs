@@ -20,7 +20,7 @@ namespace CodeSmells.Bloaters.LongMethod.ExtractMethod
 
         private void PrintHeader()
         {
-            //Console.WriteLine("*************");
+            Console.WriteLine("*************");
             //...
         }
 
